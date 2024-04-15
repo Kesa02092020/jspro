@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+    <script>
+        const regex = "Hi, do you*&%%^ know your abc's? 324238423 The latest airplane design23s evolved324 from _)@*(@slabcraft.";
+        const restr = regex.match(/^[A-Z]/g); // Using regex within match() to find uppercase letters globally
+        console.log(restr);
+
+        document.write("Regular Methods")
+        const pattern = /hello/gim
+
+        //Global
+        console.log(pattern.global);
+
+        //ignore method
+        console.log(pattern.ignoreCase);
+
+        //Multiline method
+        console.log(pattern.multiline);
+
+        //source method
+        console.log(pattern.source);
+
+        const str = "Hello hello World Javascripts!";
+
+        console.log(/hello/g.test(str));
+
+        console.log(/hello/g.exec(str));
+
+        console.log(str.match(/hello/));
+
+        console.log(str.search(/hello/));
+
+        console.log(str.replace(/hello/,"HI"));
+        
+        const ary = [1,2,3,5,8]
+
+        console.log(ary.find(myfun));
+
+        function myfun(val){
+            return val > 5;
+        }
+
+        console.log(ary.findIndex(myfun));
+
+        function myfun(val){
+            return val > 5;
+        }
+
+        console.log(ary.includes(5));
+
+        for(var i=0;i<3;i++){
+            setTimeout(()=>{console.log(i);},1)
+        }
+
+        for(let i=0;i<3;i++){
+            setTimeout(()=>{console.log(i);},100)
+        }
+
+        
+
+    </script>
+        <script>
+            console.log("Duplicate");
+
+            const arr = [1,23,3,2,4,5,6,4,5,8,9,7,2,5,6];
+            console.log(arr);
+            const resdup = [...new Set(arr)];
+            console.log(resdup); 
+            console.log("Duplicate add arr");
+
+            const secarr = [7,2,5,6];
+            console.log("Duplicate add arr",[...arr,...secarr]);
+
+
+
+            console.log("Count Duplicate array value");
+            const sarr = {};
+            arr.forEach((item) => {
+                if(sarr[item]){
+                  sarr[item]++;
+                }   
+                else{
+                    sarr[item] = 1;
+                }             
+                return sarr;
+            })
+            console.log(sarr);
+           console.log(Object.entries(sarr).map(([key,values]) => `${values} - ${key}`).join(''));
+            
+            console.log("**************************************");
+
+            const filtersome = arr.filter((item,id) => arr.some((val,index) => item === val && id !== index))
+            console.log("Get the duplicate - 1",filtersome);
+
+            const method2 = arr.filter((item,id) => arr.indexOf(item) !== id)
+            console.log("Get the duplicate - 2",method2);
+            
+
+            const arr2 = [1,23,3,2,4,5,6,4,5,8,9,7,24,5,6,24]
+            const filtermap1 = arr.filter((item, index) => item === index);
+            console.log(filtermap1);
+
+            function duph1(arr) {
+                    const duplicate = [];
+                    arr.forEach((element, index) => {
+                        if (arr.indexOf(element) !== index) {
+                            duplicate.push(element)
+                        }
+                    })
+                    return duplicate;
+                }
+            console.log(duph1(arr));
+            
+            function duph(arr) {
+                    const duplicate = [];
+                    arr.forEach((element, index) => {
+                        if (arr.indexOf(element) !== index) {
+                            duplicate.push(element)
+                        }
+                    })
+                    return duplicate.length;
+                }
+            console.log(duph(arr));
+
+            const inno = "45";
+            console.log(inno.match(/[0-9]/g));
+
+            console.log(typeof(inno));
+
+            const arrNum = [1,23,3,2,4,5,6,4,5,8,9,7,2,5,6];
+            const arrstr = "define a class with properties and methods in JavaScript Hello world! hello"; 
+            
+        console.log("How to define a class with properties and methods in JavaScript");
+
+        console.log(" How to implement class inheritance in JavaScript");
+
+        console.log(" How to find duplicate elements in a given array");
+
+                const duplicate = arrNum.filter((ele,index) => arrNum.indexOf(ele) !== index);
+                console.log("Duplicates",duplicate);
+
+                const duplicateremove = arrNum.filter((ele,index) => arrNum.indexOf(ele) === index);
+                console.log("Duplicate Remove",duplicateremove);
+
+        console.log(" How to find the count of duplicates in an array");
+
+                const duplicatecount = arrNum.filter((elemet,index) => arrNum.indexOf(elemet) !== index)
+                console.log("duplicate count",duplicatecount.length,duplicatecount);
+
+        console.log(" How to check if a given number is an integer");
+
+        console.log(typeof(arrNum));
+        console.log(typeof(arrstr));
+
+        console.log(" Explain the difference between Object.freeze() vs const");
+
+        console.log(" How to Sort a Number Array");
+
+        const Ascendingsortarr = arrNum.sort((a,b) => a-b)
+        console.log("Ascending sort",Ascendingsortarr);
+
+        const desendingsortarr = arrNum.sort((a,b) => b - a)
+        console.log("desending sort",desendingsortarr);
+
+        console.log(" Sort a given array of strings");
+
+                const strreverse = arrstr.split('').reverse().join('');
+
+                console.log("reverse string",strreverse);
+
+                const strreverseW = arrstr.split(' ');
+
+                console.log("reverse Word",strreverseW.reverse());
+
+        console.log(" How to find unique values in an array");
+
+        const uniqueval = [...new Set(arrNum)];
+        console.log("unique value",uniqueval);
+
+        console.log(" How to find unique values from an Array in sorted order");
+
+        const uniqueval1 = [...new Set(arrNum)];
+        console.log("unique value",uniqueval.sort((a,b)=>b-a));
+
+
+        console.log(" Find maximum value in a numbered array");
+
+        const maxValue = Math.max(...arrNum);
+        console.log("maxvalue",maxValue);
+
+        const reduceMin = arrNum.reduce((acc,cur)=>Math.min(acc,cur))
+
+        const reduceMax = arrNum.reduce((acc,cur)=>Math.max(acc,cur))
+        console.log("reduce Min",reduceMin,"reduce Max",reduceMax);
+
+        console.log(" Find minimum value in a numbered array");
+
+        const minValue = Math.min(...arrNum);
+        console.log("minvalue",minValue);
+
+        console.log(" Find the average of the numbers in the numbered array");
+        
+        let sum = 0;
+        for(let val of arrNum){           
+            sum += val;          
+        }
+        console.log(sum);
+        function forsum(arrNum){
+                let sum = 0;
+                for (let i = 0; i < arrNum.length; i++) {
+                    sum += arrNum[i];
+                }
+                return sum;
+        }
+        console.log(forsum(arrNum));
+
+        const reduceAvg = arrNum.reduce((acc,cur)=> acc += cur)
+
+        console.log("Reduce Avg",reduceAvg/arrNum.length);
+
+        console.log(" How can you uppercase the first character in a string array");
+
+        const strg = "ramachandran";
+
+        console.log(strg.charAt(0).toUpperCase() + strg.slice(1));
+
+        console.log(" How to make a sentence out of the given string array");
+
+        function makestring(str){
+            let remainstr = {};
+            for(let i=0;i<str.split(' ').length;i++){
+                if(str[i].length > remainstr.length){
+                    remainstr.push(str[i]);
+                }                
+            }
+            return remainstr;
+
+            // let remstr = "";
+            // for(let word of str.split(' ')){
+            //     if(word.length > remstr.length)
+            //     remstr = word;
+            // }
+            // return remstr;
+        }
+
+        console.log(makestring(arrstr))
+
+
+        console.log(" How to check if an array contains any element of another array");
+
+            const arr3 = [1,5,45,28,69,74];
+            const arr4 = [1,5,45,,2,69,70];
+
+            const filtermet = arr3.filter((ele,index)=> arr4.some((elet) => { return ele === elet} ));
+            console.log(filtermet);
+
+
+            const setarr = new Set(arr3);
+
+            const filtermetSET = arr4.filter((ele,index) =>{
+                return setarr.has(ele);
+            })
+
+            console.log(filtermetSET);
+
+
+        console.log(" Given two strings, how can you check if the strings are anagram for each other");
+
+                const anagram = "silents";
+                const stA1 = anagram.split('').reverse().join("");
+                const stA2 = anagram.split('').reverse().join("");
+                console.log(stA1 === stA2);
+
+        console.log(" How can you extract a few fields from the given JSON object and form a new array");
+
+        console.log(" Filter the given object based on certain conditions and return the corresponding object");
+
+        console.log(" Given an array of strings, reverse each word in the sentence");
+
+        console.log(" How to check if an object is present in an Array or not");
+
+        const obj = [{
+                "userId": 1,
+                "id": 1,
+                "title": "delectus aut autem",
+                "completed": false
+            },
+            {
+                "userId": 1,
+                "id": 2,
+                "title": "quis ut nam facilis et officia qui",
+                "completed": false
+            },
+            {
+                "userId": 1,
+                "id": 3,
+                "title": "fugiat veniam minus",
+                "completed": false
+            }];
+        
+
+        console.log(" How to empty an array");
+
+        console.log(" What is IIFEs (Immediately Invoked Function Expressions)");
+
+        console.log(" How do you sort and reverse an array without changing the original array");
+
+        const arrR = [5,6,4,8,23,25];
+        
+        
+       // console.log(arrR.sort((a,b) => a-b));
+       const asw = [...arrR].reverse()
+        const ase = arrR.slice().reverse();
+        const asOB = Object.assign([],obj);
+        console.log(asOB);
+        console.log(asw);
+        console.log(ase);
+        console.log(arrR)
+
+        console.log(" Write a function to check if a given string is Palindrome or not");
+
+
+        console.log(" How can you combine two Arrays into a third Array using spread operator");
+
+        console.log(" How can you Insert an element at a specific index in an Array");
+
+        //const insertarr = arri.slice()
+
+        console.log();
+
+        console.log(" How can you Replace an element at a specific index in an Array");
+
+        console.log(" How can you Delete an element at a specific index in an Array");
+
+        console.log(" How can you delete a specific element");
+
+        console.log(" How do you clone an Object");
+
+        console.log(" How do you add an element at the beginning of an array");
+
+        console.log(" How to remove an element from the end of the array");
+
+        console.log(" How can you split a string into an Array");
+
+        console.log(" How can you remove an element from the beginning of the array");
+
+        console.log(" How can you add an element to an object");
+
+        console.log(" How can you replace an existing element in an object");
+
+        console.log(" How can you combine two objects");
+
+        console.log(" How do you write a function which can take (x) number of parameters");
+
+        console.log(" Convert the given number into the exact decimal points to the right side");
+
+        console.log(" How do you return a character from a string at a specific index(2)");
+
+        console.log(" How do you create an Array out of a given sentence");
+
+        console.log(" How do you replace a given string in the string of arrays");
+
+        console.log(" How do you write an add() function using javascript currying concept");
+
+        console.log(" Implement a groupBy method in JavaScript");
+
+        console.log(" Explain WeakSet in javascript with an example");
+
+        console.log(" Explain WeakMap in javascript with an example");
+
+        console.log(" Explain what is Object Destructuring with an example");
+
+        console.log(" How can we generate a random alphanumeric string in JavaScript");
+
+        console.log(" How can we call a function which logs a message after every 5 seconds");
+
+        console.log(" How can we delay calling a function after 5 seconds");
+
+        console.log(" Write a function that performs binary search on a sorted array");
+
+        console.log(" How can we parse a given JSON object");
+
+        console.log(" How do you check whether a string contains a substring");
+
+        console.log(" How do I get query string values in javascript");
+
+        console.log(" How to create and trigger events in javascript");
+
+        console.log(" How to display the current date in javascript");
+
+        console.log(" How do you compare time for two dates");
+
+        console.log(" How do you check if a string starts with another string");
+
+        console.log(" How do you remove whitespaces from a given string");
+
+        console.log(" How do you assign default values to variables");
+
+        console.log(" For a given function, count the number of parameters expected by a function");
+
+        console.log(" Implement a method which generates 5 random numbers");
+
+        console.log(" Implement a method which generates random numbers between 41 and 67 and sort them reverse");
+
+        console.log(" How do you search a string for a pattern");
+
+        console.log(" How to write an Object and implement multiple function chaining");
+
+        console.log(" How do you determine whether an object is frozen or not");
+
+        console.log(" How do you determine two values are the same or not using an object");
+
+        console.log(" How do you copy properties from one object to another object");
+
+        console.log(" How do you determine if an object is sealed or not");
+
+        console.log(" How do you get an enumerable key and value pairs");
+
+        console.log(" What is the main difference between Object.values and Object.entries method");
+
+        console.log(" How can you get the list of keys of any object");
+
+        console.log(" How do you encode an URL");
+
+        console.log(" How do you define property on an Object constructor");
+
+        console.log(" How can you call the constructor of a parent class");
+
+        console.log(" How do you check whether an object can be extendable or not");
+
+        console.log(" How do you prevent an object from extending");
+
+        console.log(" How do you find the Vowels");
+
+        console.log(" What are default values in destructuring assignment");
+
+        console.log(" How do you swap variables in destructuring assignment");
+
+        console.log(" How do you combine two or more arrays");
+
+        console.log(" How to create a specific number of copies for a string");
+
+        console.log(" What is the easiest way to convert an array to an object");
+
+        console.log(" Verify that a function argument is a Number or not");
+
+        console.log(" What is the easiest way to resize an Array");
+
+        console.log(" What's the difference between a function expression and function declaration");
+
+        console.log(" How to detect a mobile device with JavaScript");
+
+        console.log(" How to fill static values in an array");
+
+        console.log(" Why do we use The some() method in Arrays");
+
+        console.log(" How to add 15 minutes to a JavaScript Date");
+
+        console.log(" Explain JavaScript Promises with an example");
+
+        console.log(" Which keyword can be used to deploy inheritance in ES6");
+
+        console.log(" What is the difference between for..of and for..in");
+
+        console.log(" How to set a property in localStorage");
+
+        console.log(" Give a list of the various ways using which an HTML element can be accessed within a JavaScript code");
+
+        console.log(" State the difference between Apply and Call");
+
+        console.log(" What is the difference between undefined and not defined in JavaScript");
+
+        console.log(" Explain Closure in JavaScript with an example");
+
+        console.log(" How to calculate the length of an associative array using JavaScript");
+
+        console.log(" Explain JavaScript promise.all with an example");
+
+        console.log(" Explain Promise.race with an example");
+
+        console.log(" Give an example of an Anonymous function");
+
+        console.log(" What is Prototype Property Explain with an Example."); 
+
+
+        console.log(" Explain function hoisting with an example");
+
+        console.log(" How to implement Bubble sort in JavaScript");
+
+        console.log(" How to find prime numbers in an Array");
+
+        console.log(" How to generate fibonacci series in JavaScript");
+
+        function findPairsWithSum(list) {
+    const pairs = [];
+
+    for (let i = 0; i < list.length; i++) {
+        for (let j = i + 1; j < list.length; j++) {
+            if (list[i] + list[j] === 8) {
+                pairs.push([list[i], list[j]]);
+            }
+        }
+    }
+
+    return pairs;
+}
+
+const list = [3, 2, 1, 5, 6, 4, 8, 7];
+const result = findPairsWithSum(list);
+console.log(result); // Output: [[3, 5], [2, 6], [1, 7]]
+
+
+        </script>
+    </body>
+</html>
