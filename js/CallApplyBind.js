@@ -1,4 +1,10 @@
 
+With the call() method, you can write a method that can be used on different objects.
+
+    The call method immediately invokes the function with the specified this value and individual arguments. 
+    apply : Like call , the apply method immediately invokes the function but accepts arguments as an array or array-like object. 
+    bind : The bind method doesn't immediately invoke the function.
+
 // const foo = ()=>{
 //     console.log(this.name);
 // }
